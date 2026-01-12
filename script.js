@@ -109,6 +109,7 @@ const progressText = document.getElementById('progress-text');
 const resultImage = document.getElementById('result-image');
 const resultType = document.getElementById('result-type');
 const resultName = document.getElementById('result-name');
+const partnerImage = document.getElementById('partner-image');
 const partnerType = document.getElementById('partner-type');
 
 // 화면 전환
@@ -160,6 +161,7 @@ function showResult() {
     resultImage.src = result.image;
     resultType.textContent = result.type;
     resultName.textContent = result.name;
+    partnerImage.src = results[result.partner].image;
     partnerType.textContent = `${result.partner} - ${result.partnerName}`;
 
     showScreen(resultScreen);
