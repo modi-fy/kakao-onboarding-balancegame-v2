@@ -68,7 +68,8 @@ const results = {
             "10년째 같은 백반집 단골. 사장님이 메뉴 안 물어봄",
             "흑역사 삭제 >>> 로또 번호 0.05초 (어차피 못 외움)",
             "태어난 동네에서 영면할 예정. 이사는 귀찮아."
-        ]
+        ],
+        partnerReason: "둘 다 현실적이라 대화가 통함. 김부장이 계획 짜면 모험냥이가 실행함. 완벽한 분업 👍"
     },
     RA: {
         type: "RA",
@@ -82,7 +83,8 @@ const results = {
             "웨이팅 3시간? 새로운 맛집이면 참을 수 있음",
             "1년마다 다른 동네로 이사. 택배기사님이 날 모름",
             "확실한 5천만 원 받고, 모험은 내 발로 직접 함"
-        ]
+        ],
+        partnerReason: "모험냥이가 신나게 돌아다니는 동안 김부장이 집 지킴. 돌아오면 따뜻한 밥이 있음 🏠"
     },
     IS: {
         type: "IS",
@@ -96,7 +98,8 @@ const results = {
             "방에서 나가기 싫음. 배달이 있잖아",
             "10년째 레고 조립 중. 아직 완성 안 함",
             "백수랑 영혼의 단짝 > 재벌이랑 매일 싸움"
-        ]
+        ],
+        partnerReason: "둘 다 로또 당첨 꿈꾸는 중. 타짜냥이가 복권 사오면 몽상냥이가 번호 확인함. 꿈은 같이 꾸는 거야 🎰"
     },
     IA: {
         type: "IA",
@@ -110,7 +113,8 @@ const results = {
             "맛집 두쫀쿠 배송 미정이어도 기다림. 맛이 중요하지",
             "매달 새 취미 + 1년마다 새 나라. 정착은 나중에",
             "로또 번호 0.05초? 난 외울 수 있음 ㅇㅇ"
-        ]
+        ],
+        partnerReason: "타짜냥이가 세계일주하고 오면 몽상냥이가 집에서 기다림. 모험담 들으며 같이 꿈꿈 ✈️"
     }
 };
 
@@ -140,6 +144,7 @@ const resultName = document.getElementById('result-name');
 const resultDescription = document.getElementById('result-description');
 const partnerImage = document.getElementById('partner-image');
 const partnerType = document.getElementById('partner-type');
+const partnerReason = document.getElementById('partner-reason');
 
 // 화면 전환
 function showScreen(screen) {
@@ -198,6 +203,7 @@ function showResult() {
 
     partnerImage.src = results[result.partner].image;
     partnerType.textContent = `${result.partner} - ${result.partnerName}`;
+    partnerReason.textContent = result.partnerReason;
 
     showScreen(resultScreen);
 }
