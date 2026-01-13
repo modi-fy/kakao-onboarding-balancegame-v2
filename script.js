@@ -145,6 +145,7 @@ const resultDescription = document.getElementById('result-description');
 const partnerImage = document.getElementById('partner-image');
 const partnerType = document.getElementById('partner-type');
 const partnerReason = document.getElementById('partner-reason');
+const myPosition = document.getElementById('my-position');
 
 // 화면 전환
 function showScreen(screen) {
@@ -204,6 +205,23 @@ function showResult() {
     partnerImage.src = results[result.partner].image;
     partnerType.textContent = `${result.partner} - ${result.partnerName}`;
     partnerReason.textContent = result.partnerReason;
+
+    // 사분면 위치 계산
+    // X축: R(-) ~ I(+), Y축: S(-) ~ A(+)
+    // 1구간 5문항, 2구간 5문항
+    const xScore = (scores.I - scores.R) / 5; // -1 ~ 1
+    const yScore = (scores.A - scores.S) / 5; // -1 ~ 1
+
+    // 사분면 크기 300px, 여백 30px씩
+    const centerX = 150;
+    const centerY = 150;
+    const range = 110; // 중심에서 가장자리까지 거리
+
+    const posX = centerX + (xScore * range);
+    const posY = centerY - (yScore * range); // Y축은 반전 (위가 +)
+
+    myPosition.style.left = posX + 'px';
+    myPosition.style.top = posY + 'px';
 
     showScreen(resultScreen);
 }

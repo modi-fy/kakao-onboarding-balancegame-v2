@@ -226,6 +226,120 @@ body {
     content: "🐱 ";
 }
 
+/* 사분면 그래프 */
+.quadrant-section {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border: 2px solid #f0e6d3;
+}
+
+.quadrant-label {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.quadrant {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: #fffbf0;
+    border-radius: 12px;
+}
+
+.quadrant-axis-x {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: #ccc;
+    transform: translateY(-50%);
+}
+
+.quadrant-axis-y {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: #ccc;
+    transform: translateX(-50%);
+}
+
+.quadrant-labels span {
+    position: absolute;
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.label-top {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label-bottom {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label-left {
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label-right {
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quadrant-zones span {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ddd;
+}
+
+.zone-tl {
+    top: 35%;
+    left: 20%;
+}
+
+.zone-tr {
+    top: 35%;
+    right: 20%;
+}
+
+.zone-bl {
+    bottom: 35%;
+    left: 20%;
+}
+
+.zone-br {
+    bottom: 35%;
+    right: 20%;
+}
+
+.my-position {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #e67e22;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
 .partner-section {
     background: #fff8e1;
     border-radius: 16px;
