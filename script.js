@@ -61,28 +61,56 @@ const results = {
         name: "서울 자가 대기업 김부장냥이",
         image: "images/RS.png",
         partner: "RA",
-        partnerName: "레이타고 전국일주 모험냥이"
+        partnerName: "레이타고 전국일주 모험냥이",
+        description: [
+            "5년 후 벤츠? ㅋㅋ 지금 당장 레이 뽑음",
+            "라면 물 550ml 계량컵 필수. 눈대중? 그런 거 없음",
+            "10년째 같은 백반집 단골. 사장님이 메뉴 안 물어봄",
+            "흑역사 삭제 >>> 로또 번호 0.05초 (어차피 못 외움)",
+            "태어난 동네에서 영면할 예정. 이사는 귀찮아."
+        ]
     },
     RA: {
         type: "RA",
         name: "레이타고 전국일주 모험냥이",
         image: "images/RA.png",
         partner: "RS",
-        partnerName: "서울 자가 대기업 김부장냥이"
+        partnerName: "서울 자가 대기업 김부장냥이",
+        description: [
+            "일단 레이 뽑고, 전국 맛집 투어 시작",
+            "매달 새로운 취미 입문. 집에 장비만 산더미",
+            "웨이팅 3시간? 새로운 맛집이면 참을 수 있음",
+            "1년마다 다른 동네로 이사. 택배기사님이 날 모름",
+            "확실한 5천만 원 받고, 모험은 내 발로 직접 함"
+        ]
     },
     IS: {
         type: "IS",
         name: "로또사고 집콕 몽상냥이",
         image: "images/IS.png",
         partner: "IA",
-        partnerName: "인생은 한방 타짜냥이"
+        partnerName: "인생은 한방 타짜냥이",
+        description: [
+            "5년 후 벤츠 기다리는 중. 상상만 해도 행복함",
+            "로또 번호 0.05초면 충분해 (뇌에 새길 자신 있음)",
+            "방에서 나가기 싫음. 배달이 있잖아",
+            "10년째 레고 조립 중. 아직 완성 안 함",
+            "백수랑 영혼의 단짝 > 재벌이랑 매일 싸움"
+        ]
     },
     IA: {
         type: "IA",
         name: "인생은 한방 타짜냥이",
         image: "images/IA.png",
         partner: "IS",
-        partnerName: "로또사고 집콕 몽상냥이"
+        partnerName: "로또사고 집콕 몽상냥이",
+        description: [
+            "1% 확률 5억? 당연히 도전. 인생은 한방임",
+            "5년 후 벤츠 타고 세계일주 할 예정 (예정)",
+            "맛집 두쫀쿠 배송 미정이어도 기다림. 맛이 중요하지",
+            "매달 새 취미 + 1년마다 새 나라. 정착은 나중에",
+            "로또 번호 0.05초? 난 외울 수 있음 ㅇㅇ"
+        ]
     }
 };
 
@@ -109,6 +137,7 @@ const progressText = document.getElementById('progress-text');
 const resultImage = document.getElementById('result-image');
 const resultType = document.getElementById('result-type');
 const resultName = document.getElementById('result-name');
+const resultDescription = document.getElementById('result-description');
 const partnerImage = document.getElementById('partner-image');
 const partnerType = document.getElementById('partner-type');
 
@@ -161,6 +190,12 @@ function showResult() {
     resultImage.src = result.image;
     resultType.textContent = result.type;
     resultName.textContent = result.name;
+
+    // 설명 표시
+    resultDescription.innerHTML = result.description
+        .map(desc => `<li>${desc}</li>`)
+        .join('');
+
     partnerImage.src = results[result.partner].image;
     partnerType.textContent = `${result.partner} - ${result.partnerName}`;
 
